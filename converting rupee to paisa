@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main()
+{
+float z;
+int r;
+scanf("%f",&z);
+r=z*100;
+printf("%d",r);
+return 0;
+}
+///////////////////////////////
