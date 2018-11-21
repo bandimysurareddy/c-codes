@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+char str[100];
+char *ptr;
+fgets(str,100,stdin);
+char underscore='_';
+ptr=str;
+int c=0;
+while(*ptr!=underscore && *ptr!='\n'){
+    c++;
+    ptr++;
+}
+int i=c-1;
+while(i>=0){
+    printf("%c",str[i]);
+    i--;
+}
+printf("%s",ptr);
+}
