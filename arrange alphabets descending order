@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+char str[100];
+fgets(str,100,stdin);
+char *ptr=str;
+int alphabetpresent[128][1];
+int i=0;
+while(i<=127){
+    alphabetpresent[i][0]=0;
+    i++;
+}
+while(*ptr!='\n' && *ptr!='\r'){
+    alphabetpresent[*ptr][0]=1;
+    ptr++;
+}
+i=127;
+while(i>=0){
+    if(alphabetpresent[i][0]==1){
+        printf("%c",i);
+    }
+    i--;
+}
+
+}
