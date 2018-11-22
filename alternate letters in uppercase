@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+char str[100];
+fgets(str,100,stdin);
+char *ptr=str;
+int offst;
+char word[100];
+while(sscanf(ptr,"%s%n",word,&offst)==1){
+    int i=1;
+    int wl=strlen(word);
+    while(i<=wl){
+        char  chartoprint;
+        if(i%2!=0){
+            chartoprint=toupper(word[i-1]);
+        }
+        else{
+            chartoprint=tolower(word[i-1]);
+        }
+        printf("%c",chartoprint);
+        i++;
+    }
+    printf(" ");
+    ptr+=offst;
+}
+
+}
