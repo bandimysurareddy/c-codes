@@ -1,0 +1,11 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+int dd,mm,yy;
+scanf("%d-%d-%d",&dd,&mm,&yy);
+char months[12][10]={"January","February","March","April","May","June","July","August","September","October","November","December"};
+printf("%s",months[mm-1]);
+
+}
