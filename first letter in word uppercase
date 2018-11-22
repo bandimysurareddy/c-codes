@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+char str[500];
+fgets(str,500,stdin);
+char *ptr=str;
+char prevchar=str[0];
+while(*ptr!='\n'&& *ptr!='\r'){
+    char toprint=*ptr;
+    if(prevchar==' ' || ptr==str){
+        toprint=toupper(*ptr);
+    }
+    printf("%c",toprint);
+    prevchar=*ptr;
+    ptr++;
+}
+
+}
