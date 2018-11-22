@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+char str[100];
+fgets(str,100,stdin);
+char *ptr=str;
+char *rpchar;
+while(*ptr!='\n' && *ptr!='\r'){
+    rpchar=ptr+1;
+    while(*rpchar!='\n'&& *rpchar!='\r'){
+        if(*ptr==*rpchar){
+            printf("%c",*ptr);
+            return 0;
+        }
+        rpchar++;
+    }
+    ptr++;
+}
+
+
+
+}
