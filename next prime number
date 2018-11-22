@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include <stdlib.h>
+int isprime(number);
+int main()
+{
+int n;
+scanf("%d",&n);
+int counter=n;
+while(!isprime(++counter)){
+    
+}
+printf("%d",counter);
+
+}
+int isprime(int number){
+    if(number<2){
+        return 0;
+    }
+    if(number==2){
+        return 1;
+    }
+    int sqroot=sqrt(number);
+    int div=2;
+    for(;div<=sqroot;div++){
+        if(number%div==0){
+            return 0;
+        }
+    }
+    return 1;
+}
