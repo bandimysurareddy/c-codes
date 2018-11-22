@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+int alam,tiam;
+int alb,tib;
+scanf("%d%d%d%d",&alam,&tiam,&alb,&tib);
+int allen=alam/(5*alb);
+int tilen=tiam/(5*tib);
+double diff;
+if(allen>tilen){
+    diff=allen-tilen;
+}
+else{
+    diff=tilen-allen;
+}
+printf("%.2lf",diff);
+
+}
