@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+char ar[100];
+fgets(ar,100,stdin);
+char *ptr=ar;
+int offst;
+int totald=0;
+int totalt=0;
+int cd,ct;
+while(sscanf(ptr,"%d@%d%n",&cd,&ct,&offst)==2){
+    totald+=cd;
+    totalt+=ct;
+    ptr+=offst;
+}
+printf("%.2lf kmph",(double)totald/(double)totalt);
+
+}
