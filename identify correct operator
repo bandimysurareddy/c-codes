@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+char str[100];
+fgets(str,100,stdin);
+int A,B,r;
+char inputoperator;
+sscanf(str,"%d%c%d=%d",&A,&inputoperator,&B,&r);
+if(A+B == r){
+    printf("+");
+}
+else
+if(A-B == r){
+    printf("-");
+}
+else
+if(A*B == r){
+    printf("*");
+}
+else
+if(A/B==r){
+    printf("/");
+}
+
+
+}
