@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+char str[500];
+fgets(str,500,stdin);
+char *ptr=str;
+int wc=0,offst;
+char word[500];
+while(sscanf(ptr,"%s%n",word,&offst)==1){
+    ptr+=offst;
+    wc++;
+}
+printf("%d",wc);
+
+}
