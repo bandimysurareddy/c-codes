@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+char ar[100];
+int x;
+fgets(ar,100,stdin);
+scanf("%d",&x);
+char *ptr=ar;
+int pos=0;
+while(*ptr!='\n'&& *ptr!='\r'){
+    pos++;
+    if(pos%x==0){
+        printf("%c",*ptr);
+    }
+    ptr++;
+}
+
+}
