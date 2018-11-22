@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+char ar[1000];
+int gam,lam;
+fgets(ar,1000,stdin);
+scanf("%d%d",&gam,&lam);
+char *ptr=ar;
+int offst=0;
+int cdn;
+int fnam=0;
+while(sscanf(ptr,"%d%n",&cdn,&offst)==1){
+    if(cdn%2==1){
+        fnam+=gam;
+    }
+    else{
+        fnam-=lam;
+    }
+    ptr+=offst;
+}
+printf("%d",fnam);
+
+}
