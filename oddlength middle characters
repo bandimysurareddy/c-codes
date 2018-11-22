@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+char str[101];
+fgets(str,101,stdin);
+char *ptr=str;
+int l=0;
+while(*ptr!='\n' && *ptr!='\r'){
+    l++;
+    ptr++;
+}
+printf("%c%c%c",str[l/2-1],str[l/2],str[l/2+1]);
+
+}
