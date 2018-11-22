@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+char str[201];
+char Aline[2],Bline[2];
+scanf("%s",str);
+scanf("%s",Aline);
+scanf("%s",Bline);
+char A,B;
+A=Aline[0];
+B=Bline[0];
+int BfollowA=0;
+char *ptr=str;
+while(*ptr!='\n'&&*ptr!='\r'){
+    if(*ptr==A && *(ptr+1)==B){
+        BfollowA++;
+    }
+ptr++;
+
+}
+printf("%d",BfollowA);
+}
