@@ -1,0 +1,12 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+int t1,t2,t3,n;
+scanf("%d%d%d%d",&t1,&t2,&t3,&n);
+int d=t2-t1;
+long nthterm=t1+(n-1)*d;
+printf("%ld",nthterm);
+
+}
