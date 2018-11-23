@@ -1,0 +1,54 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+char input[51];
+scanf("%s",input);
+int len=strlen(input);
+int forwardindex=0;
+int backwardindex=len-1;
+char space=' ';
+while(forwardindex!=backwardindex){
+    int index=0;
+    while(index<forwardindex){
+        printf("%c",space);
+        index++;
+    }
+    printf("%c",input[index]);
+    while(index<backwardindex){
+        printf("%c",space);
+        index++;
+    }
+    printf("%c",input[index]);
+    forwardindex++;
+    backwardindex--;
+    printf("\n");
+}
+int index=0;
+while(index<forwardindex){
+    printf("%c",space);
+    index++;
+}
+printf("%c",input[forwardindex]);
+forwardindex--;
+backwardindex++;
+printf("\n");
+while(forwardindex>=0){
+    int index=0;
+    while(index<forwardindex){
+        printf("%c",space);
+        index++;
+    }
+    printf("%c",input[index++]);
+    while(index<backwardindex){
+        printf("%c",space);
+        index++;
+    }
+    printf("%c",input[index]);
+    forwardindex--;
+    backwardindex++;
+    printf("\n");
+}
+
+}
