@@ -1,0 +1,55 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+char teamAinput[100];
+char teamBinput[100];
+fgets(teamAinput,100,stdin);
+fgets(teamBinput,100,stdin);
+char *ptr=teamAinput;
+int offst=0;
+int matchescount=0;
+int goalsscored;
+while(sscanf(ptr,"%d%n",&goalsscored,&offst)==1){
+    matchescount++;
+    ptr+=offst;
+}
+int teamAscores[matchescount];
+int teamBscores[matchescount];
+ptr=teamAinput;
+int matchindex=0;
+while(sscanf(ptr,"%d%n",&goalsscored,&offst)==1){
+    teamAscores[matchindex++]=goalsscored;
+    ptr+=offst;
+}
+ptr=teamBinput;
+matchindex=0;
+while(sscanf(ptr,"%d%n",&goalsscored,&offst)==1){
+    teamBscores[matchindex++]=goalsscored;
+    ptr+=offst;
+}
+int teamAcumulativescore=0;
+int teamBcumulativescore=0;
+int matchcounter=0;
+while(matchcounter<matchescount){
+    if(teamAscores[matchcounter]!=teamBscores[matchcounter]){
+        if(teamAscores[matchcounter]>teamBscores[matchcounter]){
+            teamAcumulativescore += 3;
+        }
+        else{
+            teamBcumulativescore += 3;
+        }
+    
+    }
+    else{
+        teamAcumulativescore++;
+        teamBcumulativescore++;
+    }
+    matchcounter++;
+    
+}
+printf("%d %d",teamAcumulativescore,teamBcumulativescore);
+
+
+}
