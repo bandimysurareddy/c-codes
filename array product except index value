@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+char input[100];
+fgets(input,100,stdin);
+char *ptr=input;
+int offst=0;
+long long int product=1;
+int currentnumber;
+int arraysize=0;
+while(sscanf(ptr,"%d%n",&currentnumber,&offst)==1){
+    arraysize++;
+    ptr+=offst;
+}
+int numbers[arraysize];
+ptr=input;
+int index=0;
+while(sscanf(ptr,"%d%n",&currentnumber,&offst)==1){
+    numbers[index]=currentnumber;
+    product *=currentnumber;
+    ptr+=offst;
+    index++;
+}
+index=0;
+while(index<arraysize){
+    printf("%lld ",product/numbers[index++]);
+}
+
+}
