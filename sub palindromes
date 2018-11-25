@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include <stdlib.h>
+int ispalindrome(const char* ptr);
+int main()
+{
+char input[100];
+scanf("%s",input);
+int len=strlen(input);
+int palindromecount=0;
+int index=0;
+while(index<=len-2){
+    int endindex=index+1;
+    while(endindex<=len-1){
+        int substrlen=endindex-index+1;
+        char substrval[substrlen+1];
+        int ctr=0;
+        while(ctr<substrlen){
+            substrval[ctr]=input[index+ctr];
+            ctr++;
+        }
+        substrval[ctr]='\0';
+        if(ispalindrome(substrval)){
+            palindromecount++;
+        }
+        endindex++;
+    }
+    index++;
+}
+printf("%d",palindromecount);
+
+}
+int ispalindrome(const char* ptr){
+    const char *revptr=ptr+strlen(ptr)-1;
+    while(ptr<revptr)
+    if(*revptr-- != *ptr++)
+            return 0;
+    return 1;
+}
