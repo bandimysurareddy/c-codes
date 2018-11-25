@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+char input[200];
+scanf("%s",input);
+int msglen=strlen(input);
+int cols;
+scanf("%d",&cols);
+int rows=msglen/cols;
+char matrix[rows][cols];
+int inputindex=0;
+int rowctr=1;
+while(rowctr<=rows){
+    if(rowctr%2==1){
+        int colctr=1;
+        while(colctr<=cols){
+            matrix[rowctr-1][colctr-1]=input[inputindex++];
+            colctr++;
+        }
+    }else{
+        int colctr=cols;
+        while(colctr>0){
+            matrix[rowctr-1][colctr-1]=input[inputindex++];
+            colctr--;
+        }
+    }
+    rowctr++;
+    
+}
+int colindex=0;
+while(colindex<cols){
+    int rowindex=0;
+    while(rowindex<rows){
+        printf("%c",matrix[rowindex][colindex]);
+        rowindex++;
+    }
+    colindex++;
+}
+
+}
